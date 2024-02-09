@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/mywishforyou.css">
+    <title>Wish</title>
+</head>
+<body>
+<audio id="audio"> <source src="/music/hpny.mp3" type="audio/mpeg">
+</audio>
+<section>
+    <p class="text">Vậy là một năm của vợ chồng mình đã qua với nhiều kỷ niệm vui buồn </p>
+    <p class="text1">Có lúc cùng nhau cười vui hạnh phúc, có lúc buồn bã hờn giận</p>
+    <p class="text2">Chuyện cũ để lại năm cũ.</p>
+    <p class="text3">Mong vợ chồng mình năm mới tài lộc thuận lợi.</p>
+    <p class="text4">Hạnh phúc đong đầy, yêu thương giữ mãi</p>
+    <p class="text5">Tiếp tục cùng nhau đắp xây mái ấm vợ nha ^^!</p>
+    <button class="button-34" role="button" onclick="document.getElementById('audio').play();">Bật nhạc</button>
+    <button class="button-33" role="button" onclick="window.location.href='firework.html'">Coi pháo hoa với chồng nè !!!</button>
+</section>
+
+<script src="/script/anime.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    const text = document.querySelector('.text');
+    text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+    const text1 = document.querySelector('.text1');
+    text1.innerHTML = text1.textContent.replace(/\S/g, "<span>$&</span>");
+    const text2 = document.querySelector('.text2');
+    text2.innerHTML = text2.textContent.replace(/\S/g, "<span>$&</span>");
+    const text3 = document.querySelector('.text3');
+    text3.innerHTML = text3.textContent.replace(/\S/g, "<span>$&</span>");
+    const text4 = document.querySelector('.text4');
+    text4.innerHTML = text4.textContent.replace(/\S/g, "<span>$&</span>");
+    const text5 = document.querySelector('.text5');
+    text5.innerHTML = text5.textContent.replace(/\S/g, "<span>$&</span>");
+
+    const animation = anime.timeline({
+        targets: '.text span',
+        easing: 'easeInOutExpo',
+        // loop: true,
+    });
+    const animation1 = anime.timeline({
+        targets: '.text1 span',
+        easing: 'easeInOutExpo',
+        // loop: true,
+    });
+    const animation2 = anime.timeline({
+        targets: '.text2 span',
+        easing: 'easeInOutExpo',
+        // loop: true,
+    });
+    const animation3 = anime.timeline({
+        targets: '.text3 span',
+        easing: 'easeInOutExpo',
+        // loop: true,
+    });
+    const animation4 = anime.timeline({
+        targets: '.text4 span',
+        easing: 'easeInOutExpo',
+        // loop: true,
+    });
+    const animation5 = anime.timeline({
+        targets: '.text5 span',
+        easing: 'easeInOutExpo',
+        // loop: true,
+    });
+    const animation6 = anime.timeline({
+        targets: '.button-33',
+        easing: 'linear',
+        // loop: true,
+    });
+
+    function moveText(animation) {
+        animation.add({
+            rotate: function () {
+                return anime.random(-360,360)
+            },
+            translateX: function () {
+                return anime.random(-500,500)
+            },
+            translateY: function () {
+                return anime.random(-500,500)
+            },
+            opacity: 1,
+            duration: 3000,
+            delay: anime.stagger(20),
+        });
+    }
+    function rollbackText() {
+        animation.add({
+            rotate: 0,
+            translateX: 0,
+            translateY: 0,
+            opacity: 1,
+            duration: 5000,
+            delay: 2000,
+        });
+        animation1.add({
+            rotate: 0,
+            translateX: 0,
+            translateY: 0,
+            opacity: 1,
+            duration: 5000,
+            delay: 7000,
+        });
+        animation2.add({
+            rotate: 0,
+            translateX: 0,
+            translateY: 0,
+            opacity: 1,
+            duration: 5000,
+            delay: 12000,
+        });
+        animation3.add({
+            rotate: 0,
+            translateX: 0,
+            translateY: 0,
+            opacity: 1,
+            duration: 5000,
+            delay: 17000,
+        });
+        animation4.add({
+            rotate: 0,
+            translateX: 0,
+            translateY: 0,
+            opacity: 1,
+            duration: 5000,
+            delay: 22000,
+        });
+        animation5.add({
+            rotate: 0,
+            translateX: 0,
+            translateY: 0,
+            opacity: 1,
+            duration: 5000,
+            delay: 27000,
+        });
+    }
+    function showButton() {
+        animation6.add({
+            opacity: 1,
+            duration: 3000,
+            delay: 32000,
+        })
+    }
+    moveText(animation);moveText(animation1);moveText(animation2);moveText(animation3);moveText(animation4);moveText(animation5);
+    rollbackText();
+    showButton();
+</script>
+</body>
+</html>

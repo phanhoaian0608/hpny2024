@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/firework.css">
+
+    <title>Firework</title>
+</head>
+<body>
+<audio id="audio"> <source src="/music/kgm.mp3" type="audio/mpeg">
+</audio>
+<div class="firework"></div>
+<div class="firework1"></div>
+<div class="firework2"></div>
+<div class="text">
+<h1>
+    <span class="letter">C</span>
+    <span class="letter">h</span>
+    <span class="letter">ú</span>
+    <span class="letter">c</span>
+    <div class="d"></div>
+    <span class="letter">M</span>
+    <span class="letter">ừ</span>
+    <span class="letter">n</span>
+    <span class="letter">g</span>
+    <div class="d"></div>
+    <span class="letter">N</span>
+    <span class="letter">ă</span>
+    <span class="letter">m</span>
+    <div class="d"></div>
+    <span class="letter">M</span>
+    <span class="letter">ớ</span>
+    <span class="letter">i</span>
+</h1>
+</div>
+<div class="firework3"></div>
+<div class="firework4"></div>
+<div class="firework5"></div>
+<button class="button-33" role="button" onclick="window.location.href='home.html'">Back</button>
+<button class="button-34" role="button" onclick="document.getElementById('audio').play();">Music!!!</button>
+<script src="/script/anime.min.js"></script>
+<script type="text/javascript">
+    let animation = anime({
+        targets: '.letter',
+        opacity: 1,
+        translateY: 50,
+        loop: true,
+        rotate: {
+            value: 360,
+            duration: 2000,
+            easing: 'easeInExpo',
+        },
+        scale: anime.stagger([0.7, 1], {from: 'center'}),
+        delay: anime.stagger(100, {start: 1000}),
+        translateX: [-10, 30],
+    });
+
+</script>
+</body>
+</html>

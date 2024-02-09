@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Welcome</title>
+</head>
+<body>
+    <div class="container">
+        <h2><span>Helu vợ bíu</span><br>Nhấn nút để tiếp tục nhen !!!<br>
+            <button class="button-33" role="button" onclick="window.location.href='yearreview.html'">Tiếp nào</button></h2>
+    </div>
+
+
+    <script src="/script/anime.min.js"></script>
+    <script>
+        const container = document.querySelector('.container')
+        for (var i = 0; i < 100; i++) {
+            const blocks = document.createElement('div')
+            blocks.classList.add('heart')
+            container.appendChild(blocks)
+        }
+
+        function animateBlocks() {
+            anime({
+                targets: '.heart',
+                translateX: function () {
+                    return anime.random(-750, 750)
+                },
+                translateY: function () {
+                    return anime.random(-700,700)
+                },
+                scale: function () {
+                    return anime.random(1,5)
+                },
+                rotate: 45,
+                easing: 'easeInOutBack',
+                duration: 3000,
+                delay: anime.stagger(10),
+                complete: animateBlocks,
+            })
+        }
+        animateBlocks()
+    </script>
+
+</body>
+</html>

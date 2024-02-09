@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Light', sans-serif;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: lightpink;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 9vw;
+    line-height: 1em;
+    z-index: 1000;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h2 span{
+    font-size: 0.2em;
+    letter-spacing: 0.4em;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.block {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    background: pink;
+    box-shadow:  0px 0px 5px #fcccf4;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    position: absolute;
+    margin: auto;
+    background: pink;
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    box-shadow:  0px 0px 5px #fcccf4;
+}
+.heart::before{
+    content: '';
+    position: absolute;
+    background-color: pink;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    box-shadow:  0px -5px 5px #fcccf4;
+
+}
+
+.heart::after {
+    background-color: pink;
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: -50%;
+    box-shadow:  -5px 0px 5px #fcccf4;
+}
+
+/* CSS */
+.button-33 {
+    background-color: #fcccf4;
+    border-radius: 100px;
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-33:hover {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+}
+

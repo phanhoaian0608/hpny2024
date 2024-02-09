@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/review.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Year Review</title>
+    <script>
+        var enventCount = 0;
+        const eventName = new Map();
+        eventName.set("142", "14-2: Đà Lạt và Cầu hôn")
+        eventName.set("182", "18-2: Đi chơi hồ trị an với hội CS")
+        eventName.set("313", "31-3: Chụp hình cưới")
+        eventName.set("87", "8-7: Ngày Vu Quy của chúng mình ")
+        eventName.set("167", "16-7: Ngày chúng ta Thành hôn")
+        eventName.set("178", "17-8: Tuần trăng mật ở Phú Quốc <3")
+        eventName.set("278", "27-8: Qua Sunview ở nà")
+        eventName.set("1010", "10-10: Đi đám cưới anh hai nè")
+        eventName.set("2511", "25-11: Ngày hội thú cưng của bột bíu")
+        eventName.set("212", "02-12: Chuyến đi Mũi Né cùng anh Sam chị Thu")
+        eventName.set("2412", "24-12: Noel chở bột béo đi lanh quanh")
+        eventName.set("3112", "31-12: Một buổi đi ăn với gia đình")
+        eventName.set("TET", "Còn nhiều mà chồng tóm tắt nhiêu đó thôi ^^! Tiếp tục ha")
+
+
+        const event =["142", "182", "313", "87", "167", "178", "278", "1010", "2511", "212", "2412", "3112", "TET"];
+        function nextButton() {
+            document.getElementById('audio').play();
+            if(enventCount == event.length - 1) {
+                $(".content").html(eventName.get(event.at(enventCount)));
+                $(".image").css("background-position", "center");
+                $(".image").css("background-size", "contain");
+                $(".image").css("background-repeat", "no-repeat");
+                $(".image").css("background-image", "url('/images/" + event.at(enventCount) +  ".jpg')");
+                $(".button-33").html("Tiếp tục");
+                $(".button-33").attr("onclick","window.location.href='mywishforyou.html'");
+                showImage();
+            }
+            else if(enventCount == 0 ) {
+                var r= $('<button class="button-34" role="button" onclick="backButton()"/>Trở lại</button>');
+                $(".foot").append(r);
+                $(".button-33").html("Tiếp");
+                $(".content").html(eventName.get(event.at(enventCount)));
+                $(".image").css("background-position", "center");
+                $(".image").css("background-size", "contain");
+                $(".image").css("background-repeat", "no-repeat");
+                $(".image").css("background-image", "url('/images/" + event.at(enventCount) +  ".jpg')");
+                showImage();
+                enventCount++;
+            }
+            else {
+                $(".content").html(eventName.get(event.at(enventCount)));
+                $(".image").css("background-position", "center");
+                $(".image").css("background-size", "contain");
+                $(".image").css("background-repeat", "no-repeat");
+                $(".image").css("background-image", "url('/images/" + event.at(enventCount) +  ".jpg')");
+                showImage();
+                enventCount++;
+            }
+        }
+
+        function backButton() {
+            if(enventCount >= 2) {
+                enventCount = enventCount - 1;
+                $(".content").html(eventName.get(event.at(enventCount - 1)));
+                $(".image").css("background-position", "center");
+                $(".image").css("background-size", "contain");
+                $(".image").css("background-repeat", "no-repeat");
+                $(".image").css("background-image", "url('/images/" + event.at(enventCount - 1) +  ".jpg')");
+            }
+        }
+    </script>
+</head>
+<body>
+<audio id="audio"> <source src="/music/nqdlg.mp3" type="audio/mpeg">
+</audio>
+<div class="container">
+    <div class="title">
+        <h2>Cùng chồng nhìn lại năm 2023 nhen ^^!</h2>
+    </div>
+    <div class="content"></div>
+    <div class="image" id="image"></div>
+    <div class="foot">
+        <button class="button-33" role="button" onclick="nextButton()">Bắt đầu</button>
+    </div>
+</div>
+<script src="/script/anime.min.js"></script>
+<script type="text/javascript">
+    const text = document.querySelector('h2');
+    text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+    const animation = anime.timeline({
+        targets: '.title',
+        easing: 'easeInOutExpo',
+        loop: true,
+    });
+
+    const animation1 = anime.timeline({
+        targets: '.image',
+        easing: 'easeInExpo',
+        loop: false,
+    });
+
+    animation1.add({ opacity: 1, duration: 3000, delay: 0})
+
+    function showImage() {
+        animation1.restart();
+    }
+
+    // function stop() {
+    //     animation1.;
+    // }
+
+
+
+
+    animation.add({
+        translateX: -150,
+        opacity: 1,
+        duration: 5000,
+        delay: anime.stagger(20),
+    }).add({
+        translateX: 150,
+        opacity: 1,
+        duration: 5000,
+        delay: anime.stagger(20),
+    })
+        .add({
+            translateX: 0,
+            opacity: 1,
+            duration: 5000,
+            delay: anime.stagger(20),
+        })
+</script>
+
+</body>
+</html>
