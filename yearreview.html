@@ -32,14 +32,14 @@
                 $(".image").css("background-size", "contain");
                 $(".image").css("background-repeat", "no-repeat");
                 $(".image").css("background-image", "url('/images/" + event.at(enventCount) +  ".jpg')");
-                $(".button-33").html("Tiếp tục");
+                $(".button-33").html("&nbsp&nbsp&nbspTiếp tục&nbsp&nbsp&nbsp");
                 $(".button-33").attr("onclick","window.location.href='mywishforyou.html'");
                 showImage();
             }
             else if(enventCount == 0 ) {
-                var r= $('<button class="button-34" role="button" onclick="backButton()"/>Trở lại</button>');
+                var r= $('<button class="button-34" role="button" onclick="backButton()"/>&nbsp&nbsp&nbspTrở lại&nbsp&nbsp&nbsp</button>');
                 $(".foot").append(r);
-                $(".button-33").html("Tiếp");
+                $(".button-33").html("&nbsp&nbsp&nbspTiếp&nbsp&nbsp&nbsp");
                 $(".content").html(eventName.get(event.at(enventCount)));
                 $(".image").css("background-position", "center");
                 $(".image").css("background-size", "contain");
@@ -81,7 +81,7 @@
     <div class="content"></div>
     <div class="image" id="image"></div>
     <div class="foot">
-        <button class="button-33" role="button" onclick="nextButton()">Bắt đầu</button>
+        <button class="button-33" role="button" onclick="nextButton()">&nbsp&nbsp&nbspBắt đầu&nbsp&nbsp&nbsp</button>
     </div>
 </div>
 <script src="/script/anime.min.js"></script>
